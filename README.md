@@ -54,7 +54,6 @@ As regras abaixo são aplicadas pelo código, não apenas pedidas no prompt:
 ## Configuração
 
 ```bash
-cd market-intelligence-pro
 cp .env.example .env        # preencha DATABASE_URL, AUTH_SECRET, ANTHROPIC_API_KEY
 npm install
 npx prisma db push          # cria as tabelas
@@ -84,11 +83,10 @@ O servidor precisa de acesso de saída a:
 
 O arquivo `railway.json` já define os comandos de build, de início (que cria as tabelas no banco) e o health check em `/api/status`.
 
-1. Em railway.com, entre com o GitHub: **New Project → Deploy from GitHub repo → `bolao`**.
-2. No serviço criado, em **Settings**, defina **Root Directory** = `market-intelligence-pro`. Se o Railway não aplicar os comandos do `railway.json`, informe em **Config-as-code** o caminho `/market-intelligence-pro/railway.json`.
-3. No projeto: **New → Database → PostgreSQL**.
-4. Em **Variables** do serviço do app: `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`, `AUTH_SECRET`, `ANTHROPIC_API_KEY` e, opcionalmente, `AI_MODEL`, `AI_EFFORT` e `SEC_USER_AGENT`.
-5. **Settings → Networking → Generate Domain** e acesse o endereço gerado.
+1. Em railway.com, entre com o GitHub: **New Project → Deploy from GitHub repo → `market-intelligence-pro`**.
+2. No projeto: **New → Database → PostgreSQL**.
+3. Em **Variables** do serviço do app: `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`, `AUTH_SECRET`, `ANTHROPIC_API_KEY` e, opcionalmente, `AI_MODEL`, `AI_EFFORT` e `SEC_USER_AGENT`.
+4. **Settings → Networking → Generate Domain** e acesse o endereço gerado.
 
 ## Observações de implantação
 
